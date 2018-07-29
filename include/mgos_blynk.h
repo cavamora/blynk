@@ -66,6 +66,8 @@ void blynk_virtual_write(struct mg_connection *c, int pin, float val, int id);
 
 bool mgos_blynk_init(void);
 
+struct mg_connection *mgos_get_blynk_connection(void);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
