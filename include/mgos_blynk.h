@@ -54,6 +54,7 @@ enum blynk_msg_type {
   BLYNK_RESPONSE = 0,
   BLYNK_LOGIN = 2,
   BLYNK_PING = 6,
+  BLYNK_NOTIFY = 14,
   BLYNK_HARDWARE = 20,
 };
 
@@ -63,6 +64,8 @@ void blynk_printf(struct mg_connection *c, uint8_t type, uint16_t id,
 
 /* Send a virtual write command */
 void blynk_virtual_write(struct mg_connection *c, int pin, float val, int id);
+
+void blynk_notify(struct mg_connection *c, char *msg, int id);
 
 bool mgos_blynk_init(void);
 

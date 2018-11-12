@@ -69,6 +69,10 @@ void blynk_virtual_write(struct mg_connection *c, int pin, float val, int id) {
   blynk_printf(c, BLYNK_HARDWARE, id, "vw%c%d%c%f", 0, pin, 0, val);
 }
 
+void blynk_notify(struct mg_connection *c, char *msg, int id) {
+  blynk_printf(c, BLYNK_NOTIFY, id, "%s", msg);
+}
+
 void blynk_printf(struct mg_connection *c, uint8_t type, uint16_t id,
                   const char *fmt, ...) {
   char buf[100];
